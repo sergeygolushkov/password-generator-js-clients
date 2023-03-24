@@ -1,0 +1,27 @@
+{
+  "name": "web-ui",
+  "private": true,
+  "version": "0.0.0",
+  "main": "./index.tsx",
+  "types": "./index.tsx",
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint \"**/*.ts*\""
+  },
+  "devDependencies": {
+    "@types/react": "18.0.28",
+    "eslint": "8.36.0",
+    "eslint-config-custom": "*",
+    "react": "18.2.0",
+    "shared": "*",
+    "tsconfig": "*",
+    "typescript": "4.9.5"
+  },
+  "dependencies": {
+    "@emotion/react": "11.10.6",
+    "@emotion/styled": "11.10.6",
+    "@mui/icons-material": "5.11.11",
+    "@mui/material": "5.11.13",
+    "framer-motion": "10.3.1"
+  }
+}

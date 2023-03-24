@@ -1,0 +1,21 @@
+$sides: (top, bottom, left, right);
+
+@for $i from 1 through 10 {
+  .padding-#{$i} {
+    padding: #{$i}rem;
+  }
+
+  @each $side in $sides {
+    .m-#{$side}-#{$i} {
+      margin-#{$side}: #{$i}rem;
+    }
+    .padding-#{$side}-#{$i} {
+      padding-#{$side}: #{$i}rem;
+    }
+  }
+}
+
+.m-auto {
+  margin: auto;
+}
+
