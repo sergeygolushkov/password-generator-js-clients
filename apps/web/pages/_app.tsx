@@ -13,8 +13,15 @@ import { DefaultSeo } from 'next-seo';
 import { NEXT_SEO_DEFAULT } from '../configuration/default-seo';
 import Image from 'next/image';
 import Head from 'next/head';
+import { Roboto } from 'next/font/google';
 
 const theme = themeV1;
+
+const roboto = Roboto({
+  weight: ['300', '400', '500', '700'],
+  style: ['normal', 'italic'],
+  subsets: ['latin'],
+});
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();
@@ -32,6 +39,11 @@ function MyApp({
 
   return (
     <>
+      <style jsx global>{`
+        html {
+          font-family: ${roboto.style.fontFamily};
+        }
+      `}</style>
       <DefaultSeo {...NEXT_SEO_DEFAULT} />
       <Head>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
