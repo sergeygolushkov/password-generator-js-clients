@@ -81,13 +81,21 @@ const mobileStoreLinks: ILinkViewModel[] = [
 ];
 
 const Web: NextPage = () => {
+  // eslint-disable-next-line turbo/no-undeclared-env-vars
+  const createPassApiUrl = process.env.NEXT_PUBLIC_API_CREATE_PASSWORD_URL;
+  // eslint-disable-next-line turbo/no-undeclared-env-vars
+  const swaggerUrl = process.env.NEXT_PUBLIC_SWAGGER_URL;
+
   return (
     <>
       <PageSeo title={pageTitle} description={pageDescription} />
       <PageTransitionAnimation>
         <PageContent>
           <HomeStartSection />
-          <HomeApiSection />
+          <HomeApiSection
+            createPasswordApiUrl={createPassApiUrl || ''}
+            swaggerUrl={swaggerUrl || ''}
+          />
           {/* <Divider />
           <HomeDesktopSection
             storeIcons={desktopStoreLinks.map((store, index) => (

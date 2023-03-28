@@ -10,7 +10,7 @@ import {
 } from '../../common';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import { GITHUB_URL, LINKED_IN_URL } from 'shared';
+import { GITHUB_WEB_REPO_URL, LINKED_IN_URL } from 'shared';
 
 export type HomeFooterSectionProps = {};
 
@@ -26,7 +26,7 @@ const Section = styled.section`
 
 const socialLinks: ILinkViewModel[] = [
   {
-    url: GITHUB_URL,
+    url: GITHUB_WEB_REPO_URL,
     imageSource: <GitHubIcon fontSize="large" />,
   },
   {

@@ -1,12 +1,13 @@
 import styled from '@emotion/styled';
-import { Box, Link, Stack, Typography } from '@mui/material';
-import { NavigationContext, WEB_APP_ROUTES } from 'shared';
+import { Box, Stack, Typography } from '@mui/material';
+import { GITHUB_WEB_REPO_URL, NavigationContext, WEB_APP_ROUTES } from 'shared';
 import { useContext } from 'react';
 import {
   buttonAnimationVariants,
   buttonAnimationVariantsKeys,
   ContentWrapper,
   DarkButton,
+  ExternalLink,
   fadeInRightKeys,
   fadeInRightVariants,
 } from '../../common';
@@ -62,7 +63,10 @@ export const HomeStartSection = (props: HomeStartSectionProps) => {
             </Typography>
             <Typography variant="h4" className="m-top-5 text-center">
               An open sources project with clients for different platforms,
-              available on the <Link href="/">Github</Link>.
+              available on the
+              <span className="m-left-1">
+                <ExternalLink content="Github" url={GITHUB_WEB_REPO_URL} />
+              </span>
             </Typography>
             <Box className="m-top-5 flex justify-center">
               <motion.div

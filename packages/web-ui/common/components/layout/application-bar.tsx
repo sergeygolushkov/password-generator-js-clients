@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { AppBar, Box, Button, Container, Toolbar } from '@mui/material';
-import { GITHUB_URL, NavigationContext, WEB_APP_ROUTES } from 'shared';
+import { GITHUB_WEB_REPO_URL, NavigationContext, WEB_APP_ROUTES } from 'shared';
 import { ReactNode, useContext } from 'react';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import { ExternalLink } from '../external-link';
@@ -53,7 +53,10 @@ export const ApplicationBar = ({ logo }: ApplicationBarProps): JSX.Element => {
           </Box>
 
           <Box>
-            <ExternalLink content={<GitHubIcon />} url={GITHUB_URL} />
+            <ExternalLink
+              content={<GitHubIcon fontSize="medium" />}
+              url={GITHUB_WEB_REPO_URL}
+            />
           </Box>
         </StyledToolbar>
       </Container>

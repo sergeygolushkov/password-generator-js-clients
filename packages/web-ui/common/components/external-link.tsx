@@ -7,7 +7,7 @@ export type ExternalLinkProps = {
 
 export const ExternalLink = ({ url, content }: ExternalLinkProps) => {
   return (
-    <Link href={url} target="_blank" rel="noreferrer">
+    <Link href={url} target="_blank" rel="nofollow">
       {content}
     </Link>
   );
