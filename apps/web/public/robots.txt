@@ -1,0 +1,15 @@
+# Password Generator robots.txt
+
+# Block all crawlers rules
+User-agent: *
+Disallow: /api/
+
+# Allow all crawlers rules
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.password-generator.com
+
+# Sitemaps
+Sitemap: https://www.password-generator.com/sitemap.xml
