@@ -1,6 +1,6 @@
 # Password Generator JS
 
-This is an javascript implementation of password generator apps. This is a monorepository that uses [turborepo](https://turbo.build/repo).
+This is an javascript implementation of password generator apps. This is a monorepository that uses [Turborepo](https://turbo.build/repo).
 
 ## Official site
 
@@ -17,10 +17,10 @@ This turborepo uses [npm](https://www.npmjs.com/) as a package manager. It inclu
 ### Apps and Packages
 
 - `web`: a [Next.js](https://nextjs.org/) app to generate passwords
-- `ui`: a stub React component library shared by `web` applications
+- `shared`: a shared library that contains platform agnostic code. Like logic, state, etc.
+- `web-ui`: a web specific React component library used by `web` application. Uses [MUI](https://mui.com/) library.
 - `eslint-config-custom`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
 - `tsconfig`: `tsconfig.json`s used throughout the monorepo
-- `shared`: a shared library that conteins platform agnostic code
 - `native`: planned. A [ReactNative](https://reactnative.dev/) app which will be added in the future.
 
 Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
