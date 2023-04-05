@@ -1,3 +1,4 @@
+export * from './error-fallback';
 export * from './styled';
 export * from './layout';
 export * from './input-slider';

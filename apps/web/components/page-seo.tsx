@@ -30,6 +30,7 @@ export const PageSeo = ({
         ...NEXT_SEO_DEFAULT.openGraph,
         title: title,
         description: description,
+        url: canonicalUrl,
         images: images
           ? images.map((image) => ({
               ...image,
