@@ -5,7 +5,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { ThemeProvider } from '@mui/material/styles';
 import '../styles/global-styles.scss';
 import themeV1 from 'web-ui/theme/theme-v1';
-import { AnimationPresence, DefaultLayout } from 'web-ui/common';
+import { AnimationPresence, DefaultLayout, ErrorFallback } from 'web-ui/common';
 import { ClipboardProvider, NavigationProvider } from '../providers';
 import { NotificationProvider } from '../providers/notification-provider';
 import { useRouter } from 'next/router';
@@ -14,6 +14,7 @@ import { NEXT_SEO_DEFAULT } from '../configuration/default-seo';
 import Image from 'next/image';
 import Head from 'next/head';
 import { Roboto } from 'next/font/google';
+import { ErrorBoundary } from 'react-error-boundary';
 
 const theme = themeV1;
 
@@ -55,21 +56,23 @@ function MyApp({
               <NotificationProvider>
                 {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
                 <CssBaseline />
-                <DefaultLayout
-                  logo={
-                    <Image
-                      src={'/favicon-32x32.png'}
-                      width={32}
-                      height={32}
-                      alt="logo"
-                      priority
-                    />
-                  }
-                >
-                  <AnimationPresence>
-                    <Component {...pageProps} key={router.route} />
-                  </AnimationPresence>
-                </DefaultLayout>
+                <ErrorBoundary FallbackComponent={ErrorFallback}>
+                  <DefaultLayout
+                    logo={
+                      <Image
+                        src={'/favicon-32x32.png'}
+                        width={32}
+                        height={32}
+                        alt="logo"
+                        priority
+                      />
+                    }
+                  >
+                    <AnimationPresence>
+                      <Component {...pageProps} key={router.route} />
+                    </AnimationPresence>
+                  </DefaultLayout>
+                </ErrorBoundary>
               </NotificationProvider>
             </ClipboardProvider>
           </NavigationProvider>
